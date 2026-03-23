@@ -13,13 +13,9 @@
         <SearchBar x:Name="txt_search" 
                    Placeholder="Busca de Produtos"
                    TextChanged="txt_search_TextChanged"/>
-        <ListView x:Name="lst_produtos">
+        <ListView x:Name="lst_produtos" ItemSelected="lst_produtos_ItemSelected">
             <ListView.Header>
-                <!--Grid ColumnDefinitions="*, *, *, *, *, *": O asterisco (*) significa "proporcional". 
-                Ao colocar seis asteriscos, você dividiu a largura da tela em 6 partes iguais. 
-                Note que você usou apenas 5 colunas no conteúdo; a sexta coluna está vazia, 
-                servindo como uma margem à direita.-->
-                <Grid ColumnDefinitions="*, *, *, *, *, *">
+                <Grid ColumnDefinitions="*, *, *, *, *">
                     <Label Grid.Column="0" Text="ID" />
                     <Label Grid.Column="1" Text="Descrição" />
                     <Label Grid.Column="2" Text="Preço" />
@@ -33,10 +29,7 @@
                         <ViewCell.ContextActions>
                             <MenuItem Text="Remover" Clicked="MenuItem_Clicked" />
                         </ViewCell.ContextActions>
-                        <Grid ColumnDefinitions="*, *, *, *, *, *">
-                            <!--Binding: É o que faz a ponte entre o dado no banco de dados e o texto na tela. 
-                            Por exemplo, {Binding Descricao} diz ao MAUI: "Procure a propriedade chamada 
-                            Descricao no objeto Produto e coloque o texto aqui".-->
+                        <Grid ColumnDefinitions="*, *, *, *, *">
                             <Label Grid.Column="0" Text="{Binding Id}" />
                             <Label Grid.Column="1" Text="{Binding Descricao}" />
                             <Label Grid.Column="2" Text="{Binding Preco}" />
