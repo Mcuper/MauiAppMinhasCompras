@@ -11,11 +11,19 @@
     <VerticalStackLayout Spacing="10" Padding="10">
         <Label Text="Descrição do Produto:" />
         <Entry x:Name="txt_descricao" />
-
         <Label Text="Quantidade:" />
-        <Entry x:Name="txt_quantidade" Keyboard="Numeric" />
+        <Entry x:Name="txt_quantidade" Keyboard="Numeric" /> 
 
         <Label Text="Preço Unitário:" />
         <Entry x:Name="txt_preco" Keyboard="Numeric" />
+
+        <Label Text="Categoria:" />
+        <Picker x:Name="pck_categoria" Title="Selecione a Categoria">
+            <Picker.Items>
+                <x:String>Alimentos</x:String>
+                <x:String>Higiene</x:String>
+                <x:String>Limpeza</x:String>
+            </Picker.Items>
+        </Picker>
     </VerticalStackLayout>
 </ContentPage>
